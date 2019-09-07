@@ -41,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NotepadPlayer.cs" />
-    <Compile Include="NotepadPlayerLogic.cs" />
-    <Compile Include="SimplePlayer.cs" />
-    <Compile Include="SimplePlayerLogic.cs" />
+    <Compile Include="ChiterPlayer\ChiterPlayer.cs" />
+    <Compile Include="ChiterPlayer\ChiterPlayerLogic.cs" />
+    <Compile Include="History\HistoryListLogic.cs" />
+    <Compile Include="UberChiterPlayer\UberChiterPlayer.cs" />
+    <Compile Include="UberChiterPlayer\UberChiterPlayerLogic.cs" />
+    <Compile Include="UberPlayer\UberPlayer.cs" />
+    <Compile Include="UberPlayer\UberPlayerLogic.cs" />
+    <Compile Include="History\HistoryList.cs" />
+    <Compile Include="NotepadPlayer\NotepadPlayer.cs" />
+    <Compile Include="NotepadPlayer\NotepadPlayerLogic.cs" />
+    <Compile Include="SimplePlayer\SimplePlayer.cs" />
+    <Compile Include="SimplePlayer\SimplePlayerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

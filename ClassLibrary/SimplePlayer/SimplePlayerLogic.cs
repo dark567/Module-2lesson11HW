@@ -19,13 +19,16 @@ namespace ClassLibrary
                 SimbleBehavior = ran.Next(40, 140);
                 if (user.StepFinish == SimbleBehavior)
                 {
-                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
                     Console.ResetColor();
                     break;
                 }
-               // else Console.WriteLine($"({user.Name}[Step:{i}] {SimbleBehavior} != {Convert.ToInt32(user.StepFinish)}");
+                else HistoryListLogic.AddHistory(new HistoryList(_historyRow: SimbleBehavior, _namePlayer: user.Name));
+
+                
+                // else Console.WriteLine($"({user.Name}[Step:{i}] {SimbleBehavior} != {Convert.ToInt32(user.StepFinish)}");
             }
         }
 
