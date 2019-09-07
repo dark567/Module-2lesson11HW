@@ -18,32 +18,41 @@ namespace ClassLibrary
 
             for (int i = 0; i < 100; i++)
             {
-                NotepadBehavior = ran.Next(40, 140);
-
-                foreach (var item in SaveIntList)
+                if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    if (item == NotepadBehavior)
-                    {
-
-                        while (item == NotepadBehavior)
-                        {
-                            NotepadBehavior = ran.Next(40, 140);
-                        }
-                    }
-                  
-                }
-                if (user.StepFinish == NotepadBehavior)
-                {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Lucky{user.Name}[Step:{i}] {NotepadBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                    Console.ResetColor();
+                    Console.WriteLine($"NotepadPlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
-                else HistoryListLogic.AddHistory(new HistoryList(_historyRow: NotepadBehavior, _namePlayer: user.Name));
-               // else Console.WriteLine($"({user.Name}[Step:{i}] {NotepadBehavior} != {Convert.ToInt32(user.StepFinish)}");
+                else
+                {
+                    NotepadBehavior = ran.Next(40, 140);
 
-                SaveIntList.Add(NotepadBehavior);
+                    foreach (var item in SaveIntList)
+                    {
+                        if (item == NotepadBehavior)
+                        {
+
+                            while (item == NotepadBehavior)
+                            {
+                                NotepadBehavior = ran.Next(40, 140);
+                            }
+                        }
+                    }
+                    if (user.StepFinish == NotepadBehavior)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"Lucky{user.Name}[Step:{i}] {NotepadBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        Console.ResetColor();
+                        MainList.ChangeStepFinishPlayer(user.Name, i);
+                        break;
+                    }
+                    else HistoryListLogic.AddHistory(new HistoryList(_historyRow: NotepadBehavior, _namePlayer: user.Name));
+                    // else Console.WriteLine($"({user.Name}[Step:{i}] {NotepadBehavior} != {Convert.ToInt32(user.StepFinish)}");
+
+                    MainList.ChangeMainCount();
+                    SaveIntList.Add(NotepadBehavior);
+                }
             }
         }
     }

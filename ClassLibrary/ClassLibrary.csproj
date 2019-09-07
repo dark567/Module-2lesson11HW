@@ -44,6 +44,7 @@
     <Compile Include="ChiterPlayer\ChiterPlayer.cs" />
     <Compile Include="ChiterPlayer\ChiterPlayerLogic.cs" />
     <Compile Include="History\HistoryListLogic.cs" />
+    <Compile Include="MainList.cs" />
     <Compile Include="UberChiterPlayer\UberChiterPlayer.cs" />
     <Compile Include="UberChiterPlayer\UberChiterPlayerLogic.cs" />
     <Compile Include="UberPlayer\UberPlayer.cs" />

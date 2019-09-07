@@ -10,25 +10,34 @@ namespace ClassLibrary
     {
         public static void CalcUberPlayer(object obj)
         {
-            Random ran = new Random();
             int UberBehavior, step = 0;
             UberPlayer user = (UberPlayer)obj;
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 40; i < 141; i++)
             {
-                UberBehavior = ran.Next(40, 140);
-                if (user.StepFinish == UberBehavior)
+                if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                    Console.ResetColor();
+                    Console.WriteLine($"UberPlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
-                else HistoryListLogic.AddHistory(new HistoryList(_historyRow: UberBehavior, _namePlayer: user.Name));
-                //else Console.WriteLine($"({user.Name}[Step:{step}] {ChiterBehavior} != {Convert.ToInt32(user.StepFinish)}");
+                else
+                {
+                    UberBehavior = i;
+                    if (user.StepFinish == UberBehavior)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        Console.ResetColor();
+                        MainList.ChangeStepFinishPlayer(user.Name, step);
+                        break;
+                    }
+                    else HistoryListLogic.AddHistory(new HistoryList(_historyRow: UberBehavior, _namePlayer: user.Name));
+                    //else Console.WriteLine($"({user.Name}[Step:{step}] {ChiterBehavior} != {Convert.ToInt32(user.StepFinish)}");
 
-                step++;
+                    MainList.ChangeMainCount();
+                    step++;
+                }
             }
         }
     }

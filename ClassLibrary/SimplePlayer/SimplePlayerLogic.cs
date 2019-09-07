@@ -16,19 +16,29 @@ namespace ClassLibrary
 
             for (int i = 0; i < 100; i++)
             {
-                SimbleBehavior = ran.Next(40, 140);
-                if (user.StepFinish == SimbleBehavior)
+                if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                    Console.ResetColor();
+                    Console.WriteLine($"SimplePlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
-                else HistoryListLogic.AddHistory(new HistoryList(_historyRow: SimbleBehavior, _namePlayer: user.Name));
+                else
+                {
+                    SimbleBehavior = ran.Next(40, 140);
+                    if (user.StepFinish == SimbleBehavior)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        Console.ResetColor();
+                        MainList.ChangeStepFinishPlayer(user.Name, i);
+                        break;
+                    }
+                    else HistoryListLogic.AddHistory(new HistoryList(_historyRow: SimbleBehavior, _namePlayer: user.Name));
 
-                
-                // else Console.WriteLine($"({user.Name}[Step:{i}] {SimbleBehavior} != {Convert.ToInt32(user.StepFinish)}");
+
+                    MainList.ChangeMainCount();
+                    // else Console.WriteLine($"({user.Name}[Step:{i}] {SimbleBehavior} != {Convert.ToInt32(user.StepFinish)}");
+                }
             }
         }
 

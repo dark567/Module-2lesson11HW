@@ -8,6 +8,9 @@ namespace ClassLibrary
 {
     public class HistoryListLogic
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static HistoryList[] GetHistoryList
         {
             get
@@ -16,6 +19,10 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_modelHistory"></param>
         public static void AddHistory(HistoryList _modelHistory)
         {
             HistoryList._historyList.Add(_modelHistory);
