@@ -8,11 +8,7 @@ using ClassLibrary;
 
 namespace ConsoleApp
 {
-    public enum Players
-    {
-        SimplePlayer,
-        NotepadPlayer
-    }
+
     class Program
     {
         public static int MainSize, SimplePlayerStep, NotepadPlayerStep;
@@ -21,14 +17,14 @@ namespace ConsoleApp
         {
             Random ran = new Random();
             MainSize = ran.Next(40, 140);
-            string typePlayer;
-            //int[] Size = new 
 
-            Thread simplePlayer = new Thread(new ParameterizedThreadStart(SimplePlayerLogic.CalcSimplePlayer));
-            simplePlayer.Start(MainSize);
+            //Thread simplePlayerThread = new Thread(new ParameterizedThreadStart(SimplePlayerLogic.CalcSimplePlayer));
+            //SimplePlayer simplepl1 = new SimplePlayer(_name: "Petr", _stepFinish: MainSize);
+            //simplePlayerThread.Start(simplepl1);
 
-            Thread notepadPlayer = new Thread(new ParameterizedThreadStart(SimplePlayerLogic.CalcNotepadPlayer));
-            simplePlayer.Start(MainSize);
+            Thread notepadPlayerThread = new Thread(new ParameterizedThreadStart(NotepadPlayerLogic.CalcNotepadPlayer));
+            NotepadPlayer notepadpl1 = new NotepadPlayer(_name: "Ivan", _stepFinish: MainSize);
+            notepadPlayerThread.Start(notepadpl1);
 
             Console.WriteLine($"{MainSize}");
             Console.ReadLine();

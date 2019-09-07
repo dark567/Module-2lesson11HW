@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    public class SimplePlayer
+    public class NotepadPlayer
     {
         public string Name { get; set; }
         public string Type { get; set; }
         public int StepFinish { get; set; }
 
-        public static List<SimplePlayer> _simplePlayer;
+        public static List<NotepadPlayer> _notepadPlayer;
 
-        static SimplePlayer()
+        static NotepadPlayer()
         {
-            _simplePlayer = new List<SimplePlayer>();
+            _notepadPlayer = new List<NotepadPlayer>();
         }
 
-        public SimplePlayer(string _name, int _stepFinish)
+        public NotepadPlayer(string _name, int _stepFinish)
         {
             this.Name = _name;
             this.StepFinish = _stepFinish;
-            this.Type = "SimplePlayer";
+            this.Type = "NotepadPlayer";
         }
     }
 }

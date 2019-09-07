@@ -12,41 +12,23 @@ namespace ClassLibrary
         {
             Random ran = new Random();
             int SimbleBehavior;
+            SimplePlayer user = (SimplePlayer)obj;
 
             for (int i = 0; i < 100; i++)
             {
                 SimbleBehavior = ran.Next(40, 140);
-                if (Convert.ToInt32(obj) == SimbleBehavior)
+                if (user.StepFinish == SimbleBehavior)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Lucky[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(obj)}");
+                    Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
                     Console.ResetColor();
                     break;
                 }
-                else Console.WriteLine($"( {SimbleBehavior} != {Convert.ToInt32(obj)}");
+               // else Console.WriteLine($"({user.Name}[Step:{i}] {SimbleBehavior} != {Convert.ToInt32(user.StepFinish)}");
             }
         }
 
-        public static void CalcNotepadPlayer(object obj)
-        {
-            Random ran = new Random();
-            int SimbleBehavior;
-
-            for (int i = 0; i < 100; i++)
-            {
-                SimbleBehavior = ran.Next(40, 140);
-                if (Convert.ToInt32(obj) == SimbleBehavior)
-                {
-                    SimplePlayerStep = 
-                    Console.BackgroundColor = ConsoleColor.Blue;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Lucky[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(obj)}");
-                    Console.ResetColor();
-                    break;
-                }
-                else Console.WriteLine($"( {SimbleBehavior} != {Convert.ToInt32(obj)}");
-            }
-        }
+      
     }
 }

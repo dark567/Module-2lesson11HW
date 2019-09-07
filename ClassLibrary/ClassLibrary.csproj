@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotepadPlayer.cs" />
+    <Compile Include="NotepadPlayerLogic.cs" />
     <Compile Include="SimplePlayer.cs" />
     <Compile Include="SimplePlayerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
