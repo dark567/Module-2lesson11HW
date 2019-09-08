@@ -35,6 +35,7 @@ namespace ClassLibrary.ChiterPlayer
                         //Console.WriteLine($"Lucky{user.Name}[Step:{i}] {ChiterBehavior} = {Convert.ToInt32(user.StepFinish)}");
                         //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, i);
+                        MainList.SetMainCount(); //set MainCount = 0 if somebody win
                         break;
                     }
                     else HistoryListLogic.AddHistory(new HistoryList(_historyRow: ChiterBehavior, _namePlayer: user.Name));

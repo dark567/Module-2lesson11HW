@@ -35,6 +35,7 @@ namespace ClassLibrary
                         //Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberChiterBehavior} = {Convert.ToInt32(user.StepFinish)}");
                         //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, step);
+                        MainList.SetMainCount(); //set MainCount = 0 if somebody win
                         break;
                     }
                     //else Console.WriteLine($"({user.Name}[Step:{step}] {ChiterBehavior} != {Convert.ToInt32(user.StepFinish)}");

@@ -30,6 +30,7 @@ namespace ClassLibrary
                         //Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberBehavior} = {Convert.ToInt32(user.StepFinish)}");
                         //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, step);
+                        MainList.SetMainCount(); //set MainCount = 0 if somebody win
                         break;
                     }
                     else HistoryListLogic.AddHistory(new HistoryList(_historyRow: UberBehavior, _namePlayer: user.Name));

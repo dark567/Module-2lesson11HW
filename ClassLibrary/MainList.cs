@@ -88,5 +88,16 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// set MainCount if somebody win
+        /// </summary>
+        public static void SetMainCount()
+        {
+            for (int i = 0; i < MainList._mainList.Count; i++)
+            {
+                MainList._mainList[i].MainCount = 0;
+            }
+        }
+
     }
 }
