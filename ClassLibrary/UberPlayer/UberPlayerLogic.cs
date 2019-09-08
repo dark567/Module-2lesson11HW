@@ -17,7 +17,7 @@ namespace ClassLibrary
             {
                 if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    Console.WriteLine($"UberPlayer:{MainList.ReturnMainCount(user.Name)}");
+                    //Console.WriteLine($"UberPlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
                 else
@@ -25,10 +25,10 @@ namespace ClassLibrary
                     UberBehavior = i;
                     if (user.StepFinish == UberBehavior)
                     {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                        Console.ResetColor();
+                        //Console.BackgroundColor = ConsoleColor.Red;
+                        //Console.ForegroundColor = ConsoleColor.White;
+                        //Console.WriteLine($"Lucky{user.Name}[Step:{step}] {UberBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, step);
                         break;
                     }

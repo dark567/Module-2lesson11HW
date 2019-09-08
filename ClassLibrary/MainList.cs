@@ -67,18 +67,18 @@ namespace ClassLibrary
             MainList._mainList[index].StepFinishPlayer = _StepFinishPlayer;
         }
         /// <summary>
-        /// 
+        /// Return new MainCount
         /// </summary>
         /// <param name="_name"></param>
         /// <returns></returns>
         public static int ReturnMainCount(string _name)
         {
-            int index = MainList._mainList.FindIndex(employee => employee.NamePlayer.Equals(_name, StringComparison.Ordinal));
+            int index = MainList._mainList.FindIndex(name => name.NamePlayer.Equals(_name, StringComparison.Ordinal));
             return MainList._mainList[index].MainCount;
         }
 
         /// <summary>
-        /// 
+        /// decrement
         /// </summary>
         public static void ChangeMainCount()
         {

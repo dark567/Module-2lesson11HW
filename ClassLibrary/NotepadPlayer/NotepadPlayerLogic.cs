@@ -20,7 +20,7 @@ namespace ClassLibrary
             {
                 if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    Console.WriteLine($"NotepadPlayer:{MainList.ReturnMainCount(user.Name)}");
+                    //Console.WriteLine($"NotepadPlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
                 else
@@ -40,10 +40,10 @@ namespace ClassLibrary
                     }
                     if (user.StepFinish == NotepadBehavior)
                     {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine($"Lucky{user.Name}[Step:{i}] {NotepadBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                        Console.ResetColor();
+                        //Console.BackgroundColor = ConsoleColor.Red;
+                        //Console.ForegroundColor = ConsoleColor.White;
+                        //Console.WriteLine($"Lucky{user.Name}[Step:{i}] {NotepadBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, i);
                         break;
                     }

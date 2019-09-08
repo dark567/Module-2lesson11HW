@@ -18,7 +18,7 @@ namespace ClassLibrary
             {
                 if (MainList.ReturnMainCount(user.Name) <= 0)
                 {
-                    Console.WriteLine($"SimplePlayer:{MainList.ReturnMainCount(user.Name)}");
+                    //Console.WriteLine($"SimplePlayer:{MainList.ReturnMainCount(user.Name)}");
                     break;
                 }
                 else
@@ -26,10 +26,10 @@ namespace ClassLibrary
                     SimbleBehavior = ran.Next(40, 140);
                     if (user.StepFinish == SimbleBehavior)
                     {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
-                        Console.ResetColor();
+                        //Console.BackgroundColor = ConsoleColor.Red;
+                        //Console.ForegroundColor = ConsoleColor.White;
+                        //Console.WriteLine($"Lucky{user.Name}[Step:{i}] {SimbleBehavior} = {Convert.ToInt32(user.StepFinish)}");
+                        //Console.ResetColor();
                         MainList.ChangeStepFinishPlayer(user.Name, i);
                         break;
                     }
